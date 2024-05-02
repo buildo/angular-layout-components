@@ -1,8 +1,43 @@
-import { Meta, Canvas } from "@storybook/blocks";
+import { Meta, Title, Subtitle, Description, Canvas } from "@storybook/blocks";
+import * as InsetStories from "./inset.stories";
 import * as StackStories from "./stack.stories";
+import * as InlineStories from "./inline.stories";
+import * as ColumnsStories from "./columns.stories";
+import * as TilesStories from "./tiles.stories";
+import * as ContentBlockStories from "./content-block.stories";
 
 <Meta title="Intro" />
 
-Per esempio lo Stack si usa così:
+<Title>Layout components</Title>
+Layout components are containers that represent the most common spacing and alignment
+rules that are usually employed in constructing an interface.
 
+## Inset
+
+<Description of={InsetStories} />
+<Canvas of={InsetStories.Basic} />
+
+## Stack
+
+<Description of={StackStories} />
 <Canvas of={StackStories.Basic} />
+
+## Inline
+
+<Description of={InlineStories} />
+<Canvas of={InlineStories.Basic} />
+
+## Columns & Column
+
+<Description of={ColumnsStories} />
+<Canvas of={ColumnsStories.Basic} />
+
+## Tiles
+
+<Description of={TilesStories} />
+<Canvas of={TilesStories.Basic} />
+
+## Content Block
+
+<Description of={ContentBlockStories} />
+<Canvas of={ContentBlockStories.Basic} />

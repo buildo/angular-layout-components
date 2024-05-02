@@ -5,8 +5,10 @@ import { Component, HostBinding, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: `<p>Placeholder</p>`,
-  styleUrls: ['./placeholder.component.scss']
+  styleUrls: ['./placeholder.component.scss'],
 })
 export class PlaceholderComponent {
-  @HostBinding('style.width') @Input({ required: true }) width: string | undefined;
+  @HostBinding('style.width') @Input({ required: true }) width:
+    | string
+    | undefined;
 }

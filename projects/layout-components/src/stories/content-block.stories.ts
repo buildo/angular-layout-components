@@ -5,14 +5,14 @@ import {
   type StoryObj,
 } from '@storybook/angular';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
-import { StackComponent } from '../lib/stack/stack.component';
+import { ContentBlockComponent } from '../lib/content-block/content-block.component';
 
 /**
- * The Stack component is used to arrange its children vertically.
+ * The Content Block component limits the maximum width of their children.
  */
-const meta: Meta<typeof StackComponent> = {
-  title: 'Components/Stack',
-  component: StackComponent,
+const meta: Meta<typeof ContentBlockComponent> = {
+  title: 'Components/Content Block',
+  component: ContentBlockComponent,
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
@@ -21,19 +21,15 @@ const meta: Meta<typeof StackComponent> = {
   ],
   render: (args) => ({
     props: args,
-    template: `<stack ${argsToTemplate(args)}>
+    template: `<content-block ${argsToTemplate(args)}>
       <placeholder></placeholder>
-      <placeholder></placeholder>
-      <placeholder></placeholder>
-    </stack>`,
+    </content-block>`,
   }),
 };
 export default meta;
 
-type Story = StoryObj<StackComponent>;
+type Story = StoryObj<ContentBlockComponent>;
 
 export const Basic: Story = {
-  args: {
-    gap: '16px',
-  },
+  args: {},
 };

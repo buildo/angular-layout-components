@@ -502,14 +502,44 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "AlignHorizontal",
+                "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/layout-components/src/stories/stack.stories.ts",
+                "file": "projects/layout-components/src/stories/columns.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    gap: '16px',\n    alignItems: 'flex-end',\n  }\n}"
+                "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/content-block.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/inline.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/inset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    padding: '40px',\n  },\n}"
             },
             {
                 "name": "Basic",
@@ -522,6 +552,64 @@
                 "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
             },
             {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/tiles.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/columns.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Stack',\n  component: ColumnsComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<columns ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </columns>`,\n  }),\n}",
+                "rawdescription": "## Columns & Column\nThe Columns component creates horizontal layouts that don't wrap. Use the Column component to determine the column size. If not specified, Column fits its content.",
+                "description": "<h2>Columns &amp; Column</h2>\n<p>The Columns component creates horizontal layouts that don&#39;t wrap. Use the Column component to determine the column size. If not specified, Column fits its content.</p>\n"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/content-block.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Stack',\n  component: ContentBlockComponent,\n  tags: ['autodocs'],\n  render: (args) => ({\n    props: args,\n    template: `<content-block ${argsToTemplate(args)}>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n    </content-block>`,\n  }),\n}",
+                "rawdescription": "## Content Block\nThe Content Block component limits the maximum width of their children.",
+                "description": "<h2>Content Block</h2>\n<p>The Content Block component limits the maximum width of their children.</p>\n"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/inline.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Stack',\n  component: InlineComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inline ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </inline>`,\n  }),\n}",
+                "rawdescription": "## Inline\nThe Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.",
+                "description": "<h2>Inline</h2>\n<p>The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.</p>\n"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/inset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Inset',\n  component: InsetComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inset ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n    </inset>`,\n  }),\n}",
+                "rawdescription": "## Inset\nThe Inset component creates a container with padding.",
+                "description": "<h2>Inset</h2>\n<p>The Inset component creates a container with padding.</p>\n"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -529,7 +617,21 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}"
+                "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}",
+                "rawdescription": "## Stack\nThe Stack component is used to arrange its children vertically.",
+                "description": "<h2>Stack</h2>\n<p>The Stack component is used to arrange its children vertically.</p>\n"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/tiles.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Stack',\n  component: TilesComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<tiles ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </tiles>`,\n  }),\n}",
+                "rawdescription": "## Tiles\nThe Tiles component is used to create grid-like layouts.",
+                "description": "<h2>Tiles</h2>\n<p>The Tiles component is used to create grid-like layouts.</p>\n"
             }
         ],
         "functions": [],
@@ -593,8 +695,63 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ColumnsComponent>",
+                "file": "projects/layout-components/src/stories/columns.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ContentBlockComponent>",
+                "file": "projects/layout-components/src/stories/content-block.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InlineComponent>",
+                "file": "projects/layout-components/src/stories/inline.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InsetComponent>",
+                "file": "projects/layout-components/src/stories/inset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<StackComponent>",
                 "file": "projects/layout-components/src/stories/stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TilesComponent>",
+                "file": "projects/layout-components/src/stories/tiles.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -603,17 +760,103 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/layout-components/src/stories/stack.stories.ts": [
+            "projects/layout-components/src/stories/columns.stories.ts": [
                 {
-                    "name": "AlignHorizontal",
+                    "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/layout-components/src/stories/stack.stories.ts",
+                    "file": "projects/layout-components/src/stories/columns.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    gap: '16px',\n    alignItems: 'flex-end',\n  }\n}"
+                    "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
                 },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/columns.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: ColumnsComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<columns ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </columns>`,\n  }),\n}",
+                    "rawdescription": "## Columns & Column\nThe Columns component creates horizontal layouts that don't wrap. Use the Column component to determine the column size. If not specified, Column fits its content.",
+                    "description": "<h2>Columns &amp; Column</h2>\n<p>The Columns component creates horizontal layouts that don&#39;t wrap. Use the Column component to determine the column size. If not specified, Column fits its content.</p>\n"
+                }
+            ],
+            "projects/layout-components/src/stories/content-block.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/content-block.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/content-block.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: ContentBlockComponent,\n  tags: ['autodocs'],\n  render: (args) => ({\n    props: args,\n    template: `<content-block ${argsToTemplate(args)}>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n    </content-block>`,\n  }),\n}",
+                    "rawdescription": "## Content Block\nThe Content Block component limits the maximum width of their children.",
+                    "description": "<h2>Content Block</h2>\n<p>The Content Block component limits the maximum width of their children.</p>\n"
+                }
+            ],
+            "projects/layout-components/src/stories/inline.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/inline.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/inline.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: InlineComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inline ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </inline>`,\n  }),\n}",
+                    "rawdescription": "## Inline\nThe Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.",
+                    "description": "<h2>Inline</h2>\n<p>The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.</p>\n"
+                }
+            ],
+            "projects/layout-components/src/stories/inset.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/inset.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    padding: '40px',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/inset.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Inset',\n  component: InsetComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inset ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n    </inset>`,\n  }),\n}",
+                    "rawdescription": "## Inset\nThe Inset component creates a container with padding.",
+                    "description": "<h2>Inset</h2>\n<p>The Inset component creates a container with padding.</p>\n"
+                }
+            ],
+            "projects/layout-components/src/stories/stack.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
@@ -632,7 +875,33 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}"
+                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}",
+                    "rawdescription": "## Stack\nThe Stack component is used to arrange its children vertically.",
+                    "description": "<h2>Stack</h2>\n<p>The Stack component is used to arrange its children vertically.</p>\n"
+                }
+            ],
+            "projects/layout-components/src/stories/tiles.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/tiles.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/tiles.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: TilesComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<tiles ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </tiles>`,\n  }),\n}",
+                    "rawdescription": "## Tiles\nThe Tiles component is used to create grid-like layouts.",
+                    "description": "<h2>Tiles</h2>\n<p>The Tiles component is used to create grid-like layouts.</p>\n"
                 }
             ]
         },
@@ -696,6 +965,58 @@
                     "kind": 192
                 }
             ],
+            "projects/layout-components/src/stories/columns.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ColumnsComponent>",
+                    "file": "projects/layout-components/src/stories/columns.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/layout-components/src/stories/content-block.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ContentBlockComponent>",
+                    "file": "projects/layout-components/src/stories/content-block.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/layout-components/src/stories/inline.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InlineComponent>",
+                    "file": "projects/layout-components/src/stories/inline.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/layout-components/src/stories/inset.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InsetComponent>",
+                    "file": "projects/layout-components/src/stories/inset.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/layout-components/src/stories/stack.stories.ts": [
                 {
                     "name": "Story",
@@ -708,13 +1029,26 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "projects/layout-components/src/stories/tiles.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TilesComponent>",
+                    "file": "projects/layout-components/src/stories/tiles.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
     "routes": [],
     "coverage": {
-        "count": 0,
-        "status": "low",
+        "count": 30,
+        "status": "medium",
         "files": [
             {
                 "filePath": "projects/layout-components/src/lib/column/column.component.ts",
@@ -780,22 +1114,92 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/layout-components/src/stories/columns.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/columns.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/content-block.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/content-block.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/inline.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/inline.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/inset.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/inset.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
                 "filePath": "projects/layout-components/src/stories/placeholder/placeholder.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PlaceholderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/layout-components/src/stories/stack.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "AlignHorizontal",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -814,9 +1218,29 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/tiles.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/tiles.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
             }
         ]
     }
