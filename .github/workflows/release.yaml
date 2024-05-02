@@ -1,0 +1,46 @@
+name: Publish Package
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get tag version
+        id: get_tag_version
+        run: echo "::set-output name=tag_version::${GITHUB_REF#refs/tags/}"
+
+      - name: Update package.json version
+        run: |
+          cd packages/layout-components
+          npm version ${{ steps.get_tag_version.outputs.tag_version }}
+          git config --global user.name "nemobot"
+          git config --global user.email "our-bots+nemobot@buildo.io"
+          git add package.json
+          git commit -m "Update package version"
+          git push
+
+      - name: Build package
+        run: npx run ng build layout-components
+
+      - name: Publish package
+        run: |
+          cd dist/layout-components
+          npm publish --access public --scope @buildo
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
