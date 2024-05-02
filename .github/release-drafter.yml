@@ -1,0 +1,32 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+template: |
+  ## What’s Changed
+  $CHANGES
+categories:
+  - title: "💥 Breaking changes"
+    labels:
+      - "breaking"
+  - title: "🐞 Bug fixes"
+    labels:
+      - "bug"
+  - title: "🔧 Dependency updates"
+    labels:
+      - "dependencies"
+  - title: "🧹 Chores"
+    labels:
+      - "chore"
+  - title: "📚 Documentation"
+    labels:
+      - "documentation"
+version-resolver:
+  minor:
+    labels:
+      - "breaking"
+  default: patch
+replacers:
+  - search: "@renovate"
+    replace: "@renovate-bot"
+  # NOTE(gabro): this is to remove the redundant issue number added by hophop in the PR title
+  - search: '/\* #\d+: (.+)/g'
+    replace: "* $1"
