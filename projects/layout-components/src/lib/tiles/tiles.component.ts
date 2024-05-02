@@ -2,13 +2,13 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { Gap, Padding } from '../common';
 
 @Component({
-  selector: 'tile',
+  selector: 'tiles',
   standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
-  styleUrl: './tile.component.css',
+  styleUrl: './tiles.component.css',
 })
-export class TileComponent {
+export class TilesComponent {
   @HostBinding('style.gap') @Input() gap: Gap = '0';
   @HostBinding('style.grid-template-columns')
   @Input()
