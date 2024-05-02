@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
@@ -34,6 +36,12 @@ jobs:
           git add package.json
           git commit -m "Update package version"
           git push origin HEAD:main
+
+      - name: Push update version
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
 
       - name: Build package
         run: npx run ng build layout-components
