@@ -27,7 +27,7 @@ jobs:
 
       - name: Update package.json version
         run: |
-          cd packages/layout-components
+          cd projects/layout-components
           npm version ${{ steps.get_tag_version.outputs.tag_version }}
           git config --global user.name "nemobot"
           git config --global user.email "our-bots+nemobot@buildo.io"
