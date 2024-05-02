@@ -58,8 +58,5 @@
     "ng-packagr": "^17.3.0",
     "storybook": "^8.0.9",
     "typescript": "~5.4.2"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/buildo"
   }
 }
