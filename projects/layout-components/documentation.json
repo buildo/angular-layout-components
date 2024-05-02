@@ -425,15 +425,15 @@
             "extends": []
         },
         {
-            "name": "TileComponent",
-            "id": "component-TileComponent-7e5a0f8c7c2f197cb276fc4df549a3cbcbfe517cd4b0d4d460ef892ae05d3f98dda262b67596a9e5c815d465722e61ed68cb38e6ccf4a3d125c3e6fab4de70ec",
-            "file": "projects/layout-components/src/lib/tile/tile.component.ts",
+            "name": "TilesComponent",
+            "id": "component-TilesComponent-60e428fe3c753abd77e9c8a6c0da5406788cfef3f3d08e45ffcd5bdd8c64cacdbe5ef316b93d5ee9e306b8cd935b4511ceb7ca26dc4e06c8bd511ea391d412ae",
+            "file": "projects/layout-components/src/lib/tiles/tiles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "tile",
+            "selector": "tiles",
             "styleUrls": [],
             "styles": [],
             "template": "<ng-content></ng-content>",
@@ -490,8 +490,8 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Gap, Padding } from '../common';\n\n@Component({\n  selector: 'tile',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './tile.component.css',\n})\nexport class TileComponent {\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.grid-template-columns')\n  @Input()\n  gridTemplateColumns: string = 'repeat(4, 1fr)';\n  @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =\n    'auto';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
-            "styleUrl": "./tile.component.css",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Gap, Padding } from '../common';\n\n@Component({\n  selector: 'tiles',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './tiles.component.css',\n})\nexport class TilesComponent {\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.grid-template-columns')\n  @Input()\n  gridTemplateColumns: string = 'repeat(4, 1fr)';\n  @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =\n    'auto';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
+            "styleUrl": "./tiles.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -771,10 +771,10 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/layout-components/src/lib/tile/tile.component.ts",
+                "filePath": "projects/layout-components/src/lib/tiles/tiles.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TileComponent",
+                "name": "TilesComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
