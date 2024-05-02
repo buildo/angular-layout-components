@@ -37,14 +37,8 @@ jobs:
           git commit -m "Update package version"
           git push origin HEAD:main
 
-      - name: Push update version
-        uses: ad-m/github-push-action@v0.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-
       - name: Build package
-        run: npx run ng build layout-components
+        run: npm run ng build layout-components
 
       - name: Publish package
         run: |
