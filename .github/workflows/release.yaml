@@ -28,12 +28,12 @@ jobs:
       - name: Update package.json version
         run: |
           cd projects/layout-components
-          npm version ${{ steps.get_tag_version.outputs.tag_version }}
+          npm version --no-git-tag-version ${{ steps.get_tag_version.outputs.tag_version }}
           git config --global user.name "nemobot"
           git config --global user.email "our-bots+nemobot@buildo.io"
           git add package.json
           git commit -m "Update package version"
-          git push
+          git push origin HEAD:main
 
       - name: Build package
         run: npx run ng build layout-components
