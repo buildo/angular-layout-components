@@ -1,5 +1,9 @@
 {
-  "name": "layout-components",
+  "name": "@buildo/angular-layout-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buildo/angular-layout-components.git"
+  },
   "version": "0.1.5",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
