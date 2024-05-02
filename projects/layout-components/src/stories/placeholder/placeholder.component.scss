@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ECEFF4;
+    color: #364459;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    padding: 40px;
+}
+
+p {
+    margin: 0;
+}

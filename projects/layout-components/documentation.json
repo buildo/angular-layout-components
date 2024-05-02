@@ -1,0 +1,823 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ColumnComponent",
+            "id": "component-ColumnComponent-45f77322473e1c665ccba2453ab20608810724e2e78d689902148133a4c78e47bfb415d6ca97f3d1e0d24f538492f1a4e44a3abceb61cfdb3322d2057e8e153b",
+            "file": "projects/layout-components/src/lib/column/column.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "column",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "flexGrow",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\n\n@Component({\n  selector: 'column',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './column.component.scss'\n})\nexport class ColumnComponent {\n  @HostBinding('style.width') @Input() width: string | undefined;\n  @HostBinding('style.flex-grow') @Input() flexGrow: string | undefined;\n}\n",
+            "styleUrl": "./column.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ColumnsComponent",
+            "id": "component-ColumnsComponent-4a1b4762ca4991437ff7d959fb823cf736f722ab421215f7b5f5c701a4c46af559df0cca68a3cf1a0424244e58ac6d84f065120a885fa0a1d388b1753027934a",
+            "file": "projects/layout-components/src/lib/columns/columns.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "columns",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "alignItems",
+                    "defaultValue": "'stretch'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "AlignItems",
+                    "decorators": []
+                },
+                {
+                    "name": "gap",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "Gap",
+                    "decorators": []
+                },
+                {
+                    "name": "justifyContent",
+                    "defaultValue": "'flex-start'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "JustifyContent",
+                    "decorators": []
+                },
+                {
+                    "name": "padding",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "Padding",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { AlignItems, Gap, JustifyContent, Padding } from '../common';\n\n@Component({\n  selector: 'columns',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './columns.component.css',\n})\nexport class ColumnsComponent {\n  @HostBinding('style.justify-content')\n  @Input()\n  justifyContent: JustifyContent = 'flex-start';\n  @HostBinding('style.align-items') @Input() alignItems: AlignItems = 'stretch';\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
+            "styleUrl": "./columns.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ContentBlockComponent",
+            "id": "component-ContentBlockComponent-9f5dea1534e283b956813d797028c89abfcaee386d29da3044a5e175830398c9ebdbf665e278998a10b9509d4e1f4143dcfeafa67d4bfbf79a1e965a7d2623cd",
+            "file": "projects/layout-components/src/lib/content-block/content-block.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "content-block",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "maxWidth",
+                    "defaultValue": "'720px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\n\n@Component({\n  selector: 'content-block',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './content-block.component.css',\n})\nexport class ContentBlockComponent {\n  @HostBinding('style.max-width') @Input() maxWidth: string = '720px';\n}\n",
+            "styleUrl": "./content-block.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "InlineComponent",
+            "id": "component-InlineComponent-5217b824c1543bde1cd82147b248f7ee136dd1b5ecc544a038541f94afa66468fe667f0d95e8de07f780e5bf70fcdc58886e23a3aa46c1c642867acf1f29f143",
+            "file": "projects/layout-components/src/lib/inline/inline.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "inline",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "alignItems",
+                    "defaultValue": "'stretch'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "AlignItems",
+                    "decorators": []
+                },
+                {
+                    "name": "gap",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "Gap",
+                    "decorators": []
+                },
+                {
+                    "name": "justifyContent",
+                    "defaultValue": "'flex-start'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "JustifyContent",
+                    "decorators": []
+                },
+                {
+                    "name": "padding",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "Padding",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { AlignItems, Gap, JustifyContent, Padding } from '../common';\n\n@Component({\n  selector: 'inline',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './inline.component.css',\n})\nexport class InlineComponent {\n  @HostBinding('style.justify-content')\n  @Input()\n  justifyContent: JustifyContent = 'flex-start';\n  @HostBinding('style.align-items') @Input() alignItems: AlignItems = 'stretch';\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
+            "styleUrl": "./inline.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "InsetComponent",
+            "id": "component-InsetComponent-e4778a77510bae2ba453d43b170c57d6e5bc74596de716fcf8eeca628a19ce32b9f1257dc958c46b87caa689a4dfba54da3f3a2708a580418ed4cb7e470ee086",
+            "file": "projects/layout-components/src/lib/inset/inset.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "inset",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "padding",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "Padding",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Padding } from '../common';\n\n@Component({\n  selector: 'inset',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './inset.component.css',\n})\nexport class InsetComponent {\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
+            "styleUrl": "./inset.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "PlaceholderComponent",
+            "id": "component-PlaceholderComponent-ab7854dd02873e9eb0f5e8073d4d12ba68d687f376bb9aa7245c3ac6f0a85eff53391bcc9cf9830dcf75490fa661b17ad9869cec7527256565e584e537ca99f8",
+            "file": "projects/layout-components/src/stories/placeholder/placeholder.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "placeholder",
+            "styleUrls": [
+                "./placeholder.component.scss"
+            ],
+            "styles": [],
+            "template": "<p>Placeholder</p>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 11,
+                    "type": "string | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\n\n@Component({\n  selector: 'placeholder',\n  standalone: true,\n  imports: [],\n  template: `<p>Placeholder</p>`,\n  styleUrls: ['./placeholder.component.scss']\n})\nexport class PlaceholderComponent {\n  @HostBinding('style.width') @Input({ required: true }) width: string | undefined;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');\n\n:host {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: #ECEFF4;\n    color: #364459;\n    font-family: \"Poppins\", sans-serif;\n    font-weight: 400;\n    padding: 40px;\n}\n\np {\n    margin: 0;\n}",
+                    "styleUrl": "./placeholder.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "StackComponent",
+            "id": "component-StackComponent-6f7f38c78f1a3bdda1c056c4b66ef3f9b216de304eceab0d8a6665d795fc4179318d845cf4727dc98c21fc935820c5c7d00f8ca8df6d17053632504e3a35cc08",
+            "file": "projects/layout-components/src/lib/stack/stack.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "stack",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "alignItems",
+                    "defaultValue": "'stretch'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "AlignItems",
+                    "decorators": []
+                },
+                {
+                    "name": "gap",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "Gap",
+                    "decorators": []
+                },
+                {
+                    "name": "justifyContent",
+                    "defaultValue": "'flex-start'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "JustifyContent",
+                    "decorators": []
+                },
+                {
+                    "name": "padding",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "Padding",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Properties } from 'csstype';\nimport { AlignItems, Gap, JustifyContent, Padding } from '../common';\n\n@Component({\n  selector: 'stack',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './stack.component.css',\n})\nexport class StackComponent {\n  @HostBinding('style.justify-content') @Input() justifyContent: JustifyContent =\n    'flex-start';\n  @HostBinding('style.align-items')\n  @Input()\n  alignItems: AlignItems = 'stretch';\n  @HostBinding('style.gap')\n  /**\n   * The gap between the children of the stack.\n   */\n  @Input() gap: Gap = '0';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
+            "styleUrl": "./stack.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "TileComponent",
+            "id": "component-TileComponent-7e5a0f8c7c2f197cb276fc4df549a3cbcbfe517cd4b0d4d460ef892ae05d3f98dda262b67596a9e5c815d465722e61ed68cb38e6ccf4a3d125c3e6fab4de70ec",
+            "file": "projects/layout-components/src/lib/tile/tile.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tile",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "gap",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "Gap",
+                    "decorators": []
+                },
+                {
+                    "name": "gridTemplateColumns",
+                    "defaultValue": "'repeat(4, 1fr)'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "gridTemplateRows",
+                    "defaultValue": "'auto'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "padding",
+                    "defaultValue": "'0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "Padding",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Gap, Padding } from '../common';\n\n@Component({\n  selector: 'tile',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './tile.component.css',\n})\nexport class TileComponent {\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.grid-template-columns')\n  @Input()\n  gridTemplateColumns: string = 'repeat(4, 1fr)';\n  @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =\n    'auto';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
+            "styleUrl": "./tile.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "AlignHorizontal",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    gap: '16px',\n    alignItems: 'flex-end',\n  }\n}"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "AlignItems",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"",
+                "file": "projects/layout-components/src/lib/common.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "Gap",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "SpacingScale",
+                "file": "projects/layout-components/src/lib/common.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "JustifyContent",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"",
+                "file": "projects/layout-components/src/lib/common.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "Padding",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "SpacingScale | template literal type | template literal type | template literal type",
+                "file": "projects/layout-components/src/lib/common.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "SpacingScale",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"0\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"32px\" | \"40px\" | \"64px\" | \"80px\" | \"120px\" | \"160px\"",
+                "file": "projects/layout-components/src/lib/common.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<StackComponent>",
+                "file": "projects/layout-components/src/stories/stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/layout-components/src/stories/stack.stories.ts": [
+                {
+                    "name": "AlignHorizontal",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    gap: '16px',\n    alignItems: 'flex-end',\n  }\n}"
+                },
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/layout-components/src/lib/common.ts": [
+                {
+                    "name": "AlignItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"flex-start\" | \"center\" | \"flex-end\" | \"stretch\" | \"baseline\"",
+                    "file": "projects/layout-components/src/lib/common.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
+                    "name": "Gap",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "SpacingScale",
+                    "file": "projects/layout-components/src/lib/common.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "JustifyContent",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"flex-start\" | \"center\" | \"flex-end\" | \"space-between\" | \"space-around\" | \"space-evenly\"",
+                    "file": "projects/layout-components/src/lib/common.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
+                    "name": "Padding",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "SpacingScale | template literal type | template literal type | template literal type",
+                    "file": "projects/layout-components/src/lib/common.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
+                    "name": "SpacingScale",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"0\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"32px\" | \"40px\" | \"64px\" | \"80px\" | \"120px\" | \"160px\"",
+                    "file": "projects/layout-components/src/lib/common.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "projects/layout-components/src/stories/stack.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<StackComponent>",
+                    "file": "projects/layout-components/src/stories/stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/layout-components/src/lib/column/column.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColumnComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/columns/columns.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColumnsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/content-block/content-block.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContentBlockComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/inline/inline.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InlineComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/inset/inset.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InsetComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/stack/stack.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StackComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/tile/tile.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TileComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/placeholder/placeholder.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PlaceholderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AlignHorizontal",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
