@@ -300,7 +300,7 @@
         },
         {
             "name": "PlaceholderComponent",
-            "id": "component-PlaceholderComponent-ab7854dd02873e9eb0f5e8073d4d12ba68d687f376bb9aa7245c3ac6f0a85eff53391bcc9cf9830dcf75490fa661b17ad9869cec7527256565e584e537ca99f8",
+            "id": "component-PlaceholderComponent-5604398d16d88f1c7f1b05f3ee5e31783dfc9b676c55704bd913505fa5e0637fff6e584d1d352cd63e4f8088f864430afbee4c1238a8b03d7110bf91c18aab0e",
             "file": "projects/layout-components/src/stories/placeholder/placeholder.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -340,7 +340,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\n\n@Component({\n  selector: 'placeholder',\n  standalone: true,\n  imports: [],\n  template: `<p>Placeholder</p>`,\n  styleUrls: ['./placeholder.component.scss']\n})\nexport class PlaceholderComponent {\n  @HostBinding('style.width') @Input({ required: true }) width: string | undefined;\n}\n",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\n\n@Component({\n  selector: 'placeholder',\n  standalone: true,\n  imports: [],\n  template: `<p>Placeholder</p>`,\n  styleUrls: ['./placeholder.component.scss'],\n})\nexport class PlaceholderComponent {\n  @HostBinding('style.width') @Input({ required: true }) width:\n    | string\n    | undefined;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -426,7 +426,7 @@
         },
         {
             "name": "TilesComponent",
-            "id": "component-TilesComponent-60e428fe3c753abd77e9c8a6c0da5406788cfef3f3d08e45ffcd5bdd8c64cacdbe5ef316b93d5ee9e306b8cd935b4511ceb7ca26dc4e06c8bd511ea391d412ae",
+            "id": "component-TilesComponent-03266cf90b6daff9b03045a049a13b40dd6b8774a5b4bf72f484a4c6188fd91b00ed49343f53317f012689fc833a8cf3e9935789382b34de1e17d7b064b1592a",
             "file": "projects/layout-components/src/lib/tiles/tiles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -442,6 +442,16 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "required": true,
+                    "name": "columns",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 16,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
                     "name": "gap",
                     "defaultValue": "'0'",
                     "deprecated": false,
@@ -451,20 +461,11 @@
                     "decorators": []
                 },
                 {
-                    "name": "gridTemplateColumns",
-                    "defaultValue": "'repeat(4, 1fr)'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
                     "name": "gridTemplateRows",
                     "defaultValue": "'auto'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -473,7 +474,7 @@
                     "defaultValue": "'0'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 15,
                     "type": "Padding",
                     "decorators": []
                 }
@@ -483,19 +484,39 @@
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
-            "hostBindings": [],
+            "hostBindings": [
+                {
+                    "name": "style.grid-template-columns",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "hostListeners": [],
             "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Gap, Padding } from '../common';\n\n@Component({\n  selector: 'tiles',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './tiles.component.css',\n})\nexport class TilesComponent {\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.grid-template-columns')\n  @Input()\n  gridTemplateColumns: string = 'repeat(4, 1fr)';\n  @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =\n    'auto';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n}\n",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Gap, Padding } from '../common';\n\n@Component({\n  selector: 'tiles',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './tiles.component.css',\n})\nexport class TilesComponent {\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =\n    'auto';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n  @Input({ required: true }) columns!: number;\n  @HostBinding('style.grid-template-columns') get gridTemplateColumns() {\n    return `repeat(${this.columns}, 1fr)`;\n  }\n}\n",
             "styleUrl": "./tiles.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": []
+            "extends": [],
+            "accessors": {
+                "gridTemplateColumns": {
+                    "name": "gridTemplateColumns",
+                    "getSignature": {
+                        "name": "gridTemplateColumns",
+                        "type": "",
+                        "returnType": "",
+                        "line": 17
+                    }
+                }
+            }
         }
     ],
     "modules": [],
@@ -569,9 +590,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\n  title: 'Components/Stack',\n  component: ColumnsComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<columns ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </columns>`,\n  }),\n}",
-                "rawdescription": "## Columns & Column\nThe Columns component creates horizontal layouts that don't wrap. Use the Column component to determine the column size. If not specified, Column fits its content.",
-                "description": "<h2>Columns &amp; Column</h2>\n<p>The Columns component creates horizontal layouts that don&#39;t wrap. Use the Column component to determine the column size. If not specified, Column fits its content.</p>\n"
+                "defaultValue": "{\n  title: 'Components/Columns',\n  component: ColumnsComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent, ColumnComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<columns ${argsToTemplate(args)}>\n      <column width=\"240px\">\n        <placeholder></placeholder>\n      </column>\n      <column>\n        <placeholder></placeholder>\n      </column>\n      <column flexGrow=\"1\">\n        <placeholder></placeholder>\n      </column>\n    </columns>`,\n  }),\n}",
+                "rawdescription": "The Columns component creates horizontal layouts that don't wrap. Use the Column component to determine the column size. If not specified, Column fits its content.",
+                "description": "<p>The Columns component creates horizontal layouts that don&#39;t wrap. Use the Column component to determine the column size. If not specified, Column fits its content.</p>\n"
             },
             {
                 "name": "meta",
@@ -581,9 +602,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\n  title: 'Components/Stack',\n  component: ContentBlockComponent,\n  tags: ['autodocs'],\n  render: (args) => ({\n    props: args,\n    template: `<content-block ${argsToTemplate(args)}>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n    </content-block>`,\n  }),\n}",
-                "rawdescription": "## Content Block\nThe Content Block component limits the maximum width of their children.",
-                "description": "<h2>Content Block</h2>\n<p>The Content Block component limits the maximum width of their children.</p>\n"
+                "defaultValue": "{\n  title: 'Components/Content Block',\n  component: ContentBlockComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<content-block ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n    </content-block>`,\n  }),\n}",
+                "rawdescription": "The Content Block component limits the maximum width of their children.",
+                "description": "<p>The Content Block component limits the maximum width of their children.</p>\n"
             },
             {
                 "name": "meta",
@@ -593,9 +614,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\n  title: 'Components/Stack',\n  component: InlineComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inline ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </inline>`,\n  }),\n}",
-                "rawdescription": "## Inline\nThe Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.",
-                "description": "<h2>Inline</h2>\n<p>The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.</p>\n"
+                "defaultValue": "{\n  title: 'Components/Inline',\n  component: InlineComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inline ${argsToTemplate(args)}>\n      <placeholder width=\"120px\"></placeholder>\n      <placeholder width=\"240px\"></placeholder>\n      <placeholder width=\"160px\"></placeholder>\n      <placeholder width=\"320px\"></placeholder>\n      <placeholder width=\"120px\"></placeholder>\n    </inline>`,\n  }),\n}",
+                "rawdescription": "The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.",
+                "description": "<p>The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.</p>\n"
             },
             {
                 "name": "meta",
@@ -605,9 +626,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\n  title: 'Components/Inset',\n  component: InsetComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inset ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n    </inset>`,\n  }),\n}",
-                "rawdescription": "## Inset\nThe Inset component creates a container with padding.",
-                "description": "<h2>Inset</h2>\n<p>The Inset component creates a container with padding.</p>\n"
+                "defaultValue": "{\n  title: 'Components/Inset',\n  component: InsetComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inset ${argsToTemplate(args)}>\n        <placeholder></placeholder>\n      </inset>`,\n  }),\n}",
+                "rawdescription": "The Inset component creates a container with padding.",
+                "description": "<p>The Inset component creates a container with padding.</p>\n"
             },
             {
                 "name": "meta",
@@ -618,8 +639,8 @@
                 "deprecationMessage": "",
                 "type": "Meta<>",
                 "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}",
-                "rawdescription": "## Stack\nThe Stack component is used to arrange its children vertically.",
-                "description": "<h2>Stack</h2>\n<p>The Stack component is used to arrange its children vertically.</p>\n"
+                "rawdescription": "The Stack component is used to arrange its children vertically.",
+                "description": "<p>The Stack component is used to arrange its children vertically.</p>\n"
             },
             {
                 "name": "meta",
@@ -629,9 +650,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\n  title: 'Components/Stack',\n  component: TilesComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<tiles ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </tiles>`,\n  }),\n}",
-                "rawdescription": "## Tiles\nThe Tiles component is used to create grid-like layouts.",
-                "description": "<h2>Tiles</h2>\n<p>The Tiles component is used to create grid-like layouts.</p>\n"
+                "defaultValue": "{\n  title: 'Components/Tiles',\n  component: TilesComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<tiles ${argsToTemplate(args)}>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n      </tiles>`,\n  }),\n}",
+                "rawdescription": "The Tiles component is used to create grid-like layouts.",
+                "description": "<p>The Tiles component is used to create grid-like layouts.</p>\n"
             }
         ],
         "functions": [],
@@ -779,9 +800,9 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: ColumnsComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<columns ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </columns>`,\n  }),\n}",
-                    "rawdescription": "## Columns & Column\nThe Columns component creates horizontal layouts that don't wrap. Use the Column component to determine the column size. If not specified, Column fits its content.",
-                    "description": "<h2>Columns &amp; Column</h2>\n<p>The Columns component creates horizontal layouts that don&#39;t wrap. Use the Column component to determine the column size. If not specified, Column fits its content.</p>\n"
+                    "defaultValue": "{\n  title: 'Components/Columns',\n  component: ColumnsComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent, ColumnComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<columns ${argsToTemplate(args)}>\n      <column width=\"240px\">\n        <placeholder></placeholder>\n      </column>\n      <column>\n        <placeholder></placeholder>\n      </column>\n      <column flexGrow=\"1\">\n        <placeholder></placeholder>\n      </column>\n    </columns>`,\n  }),\n}",
+                    "rawdescription": "The Columns component creates horizontal layouts that don't wrap. Use the Column component to determine the column size. If not specified, Column fits its content.",
+                    "description": "<p>The Columns component creates horizontal layouts that don&#39;t wrap. Use the Column component to determine the column size. If not specified, Column fits its content.</p>\n"
                 }
             ],
             "projects/layout-components/src/stories/content-block.stories.ts": [
@@ -803,9 +824,9 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: ContentBlockComponent,\n  tags: ['autodocs'],\n  render: (args) => ({\n    props: args,\n    template: `<content-block ${argsToTemplate(args)}>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n    </content-block>`,\n  }),\n}",
-                    "rawdescription": "## Content Block\nThe Content Block component limits the maximum width of their children.",
-                    "description": "<h2>Content Block</h2>\n<p>The Content Block component limits the maximum width of their children.</p>\n"
+                    "defaultValue": "{\n  title: 'Components/Content Block',\n  component: ContentBlockComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<content-block ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n    </content-block>`,\n  }),\n}",
+                    "rawdescription": "The Content Block component limits the maximum width of their children.",
+                    "description": "<p>The Content Block component limits the maximum width of their children.</p>\n"
                 }
             ],
             "projects/layout-components/src/stories/inline.stories.ts": [
@@ -827,9 +848,9 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: InlineComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inline ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </inline>`,\n  }),\n}",
-                    "rawdescription": "## Inline\nThe Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.",
-                    "description": "<h2>Inline</h2>\n<p>The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.</p>\n"
+                    "defaultValue": "{\n  title: 'Components/Inline',\n  component: InlineComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inline ${argsToTemplate(args)}>\n      <placeholder width=\"120px\"></placeholder>\n      <placeholder width=\"240px\"></placeholder>\n      <placeholder width=\"160px\"></placeholder>\n      <placeholder width=\"320px\"></placeholder>\n      <placeholder width=\"120px\"></placeholder>\n    </inline>`,\n  }),\n}",
+                    "rawdescription": "The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.",
+                    "description": "<p>The Inline component is used to create horizontally flowing layouts, which wrap across multiple lines if necessary.</p>\n"
                 }
             ],
             "projects/layout-components/src/stories/inset.stories.ts": [
@@ -851,9 +872,9 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\n  title: 'Components/Inset',\n  component: InsetComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inset ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n    </inset>`,\n  }),\n}",
-                    "rawdescription": "## Inset\nThe Inset component creates a container with padding.",
-                    "description": "<h2>Inset</h2>\n<p>The Inset component creates a container with padding.</p>\n"
+                    "defaultValue": "{\n  title: 'Components/Inset',\n  component: InsetComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<inset ${argsToTemplate(args)}>\n        <placeholder></placeholder>\n      </inset>`,\n  }),\n}",
+                    "rawdescription": "The Inset component creates a container with padding.",
+                    "description": "<p>The Inset component creates a container with padding.</p>\n"
                 }
             ],
             "projects/layout-components/src/stories/stack.stories.ts": [
@@ -876,8 +897,8 @@
                     "deprecationMessage": "",
                     "type": "Meta<>",
                     "defaultValue": "{\n  title: 'Components/Stack',\n  component: StackComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<stack ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </stack>`,\n  }),\n}",
-                    "rawdescription": "## Stack\nThe Stack component is used to arrange its children vertically.",
-                    "description": "<h2>Stack</h2>\n<p>The Stack component is used to arrange its children vertically.</p>\n"
+                    "rawdescription": "The Stack component is used to arrange its children vertically.",
+                    "description": "<p>The Stack component is used to arrange its children vertically.</p>\n"
                 }
             ],
             "projects/layout-components/src/stories/tiles.stories.ts": [
@@ -899,9 +920,9 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\n  title: 'Components/Stack',\n  component: TilesComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<tiles ${argsToTemplate(args)}>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n      <placeholder></placeholder>\n    </tiles>`,\n  }),\n}",
-                    "rawdescription": "## Tiles\nThe Tiles component is used to create grid-like layouts.",
-                    "description": "<h2>Tiles</h2>\n<p>The Tiles component is used to create grid-like layouts.</p>\n"
+                    "defaultValue": "{\n  title: 'Components/Tiles',\n  component: TilesComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<tiles ${argsToTemplate(args)}>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n      </tiles>`,\n  }),\n}",
+                    "rawdescription": "The Tiles component is used to create grid-like layouts.",
+                    "description": "<p>The Tiles component is used to create grid-like layouts.</p>\n"
                 }
             ]
         },
@@ -1110,7 +1131,7 @@
                 "linktype": "component",
                 "name": "TilesComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

@@ -40,5 +40,6 @@ type Story = StoryObj<TilesComponent>;
 export const Basic: Story = {
   args: {
     gap: '16px',
+    columns: 3,
   },
 };

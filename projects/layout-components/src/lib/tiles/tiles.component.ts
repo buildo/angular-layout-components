@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, numberAttribute } from '@angular/core';
 import { Gap, Padding } from '../common';
 
 @Component({
@@ -10,10 +10,11 @@ import { Gap, Padding } from '../common';
 })
 export class TilesComponent {
   @HostBinding('style.gap') @Input() gap: Gap = '0';
-  @HostBinding('style.grid-template-columns')
-  @Input()
-  gridTemplateColumns: string = 'repeat(4, 1fr)';
   @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =
     'auto';
   @HostBinding('style.padding') @Input() padding: Padding = '0';
+  @Input({ transform: numberAttribute }) columns: number = 0;
+  @HostBinding('style.grid-template-columns') get gridTemplateColumns() {
+    return `repeat(${this.columns}, 1fr)`;
+  }
 }
