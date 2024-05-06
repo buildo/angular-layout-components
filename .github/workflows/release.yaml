@@ -39,6 +39,14 @@ jobs:
       - name: Build package
         run: npm run ng build layout-components
 
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          package: "dist/layout-components/package.json"
+          token: ${{ secrets.NPM_TOKEN }}
+          access: "public"
+          provenance: true
+
       - name: Publish to Github
         uses: JS-DevTools/npm-publish@v3
         with:
