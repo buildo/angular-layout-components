@@ -51,6 +51,7 @@ jobs:
         uses: JS-DevTools/npm-publish@v3
         with:
           package: "dist/layout-components/package.json"
+          registry: "https://npm.pkg.github.com"
           token: ${{ github.token }}
           access: "public"
           provenance: true
