@@ -1,0 +1,78 @@
+import { Meta, Title, Subtitle, Description, Canvas, Source } from "@storybook/blocks";
+import * as InsetStories from "./inset.stories";
+import * as StackStories from "./stack.stories";
+import * as InlineStories from "./inline.stories";
+import * as ColumnsStories from "./columns.stories";
+import * as TilesStories from "./tiles.stories";
+import * as ContentBlockStories from "./content-block.stories";
+
+<Meta title="Get Started" />
+
+<Title>Install and use the components</Title>
+
+Install the library using
+
+<Source language="sh" dark code="npm install @buildo/angular-layout-components" />
+
+Then to use the layout components you need to import the module in your Angular module:
+
+<Source language="typescript" dark code={`import { StackComponent, TilesComponent } from '@buildo/angular-layout-components';
+
+@NgModule({
+  imports: [
+    StackComponent,
+    TilesComponent
+  ]
+})
+class AppModule {}`} />
+
+Then use them in the template:
+
+<Source language="html" dark code={`<stack gap="16px">
+  <div>Element 1</div>
+  <div>Element 2</div>
+  <div>Element 3</div>
+</stack>
+
+<tiles gap="16px" columns 3>
+  <div>Element 1</div>
+  <div>Element 2</div>
+  <div>Element 3</div>
+  <div>Element 4</div>
+  <div>Element 5</div>
+</tiles>
+`} />
+
+<Title>Layout components</Title>
+Layout components are containers that represent the most common spacing and alignment
+rules that are usually employed in constructing an interface.
+
+## Inset
+
+<Description of={InsetStories} />
+<Canvas of={InsetStories.Basic} />
+
+## Stack
+
+<Description of={StackStories} />
+<Canvas of={StackStories.Basic} />
+
+## Inline
+
+<Description of={InlineStories} />
+<Canvas of={InlineStories.Basic} />
+
+## Columns & Column
+
+<Description of={ColumnsStories} />
+<Canvas of={ColumnsStories.Basic} />
+
+## Tiles
+
+<Description of={TilesStories} />
+<Canvas of={TilesStories.Basic} />
+
+## Content Block
+
+<Description of={ContentBlockStories} />
+<Canvas of={ContentBlockStories.Basic} />
