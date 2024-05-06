@@ -426,7 +426,7 @@
         },
         {
             "name": "TilesComponent",
-            "id": "component-TilesComponent-03266cf90b6daff9b03045a049a13b40dd6b8774a5b4bf72f484a4c6188fd91b00ed49343f53317f012689fc833a8cf3e9935789382b34de1e17d7b064b1592a",
+            "id": "component-TilesComponent-79d05d9319d9eb7a7a1d5dae6d3d387c35ab355c01c6392dd16c9bce7c7a724f2065583bb4c568ab2d0207707fb14a64599284601cdde061dbcad8f99dab2349",
             "file": "projects/layout-components/src/lib/tiles/tiles.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -442,11 +442,11 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "required": true,
+                    "required": false,
                     "name": "columns",
+                    "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "optional": false,
                     "line": 16,
                     "type": "number",
                     "decorators": []
@@ -500,7 +500,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\nimport { Gap, Padding } from '../common';\n\n@Component({\n  selector: 'tiles',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './tiles.component.css',\n})\nexport class TilesComponent {\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =\n    'auto';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n  @Input({ required: true }) columns!: number;\n  @HostBinding('style.grid-template-columns') get gridTemplateColumns() {\n    return `repeat(${this.columns}, 1fr)`;\n  }\n}\n",
+            "sourceCode": "import { Component, HostBinding, Input, numberAttribute } from '@angular/core';\nimport { Gap, Padding } from '../common';\n\n@Component({\n  selector: 'tiles',\n  standalone: true,\n  imports: [],\n  template: `<ng-content></ng-content>`,\n  styleUrl: './tiles.component.css',\n})\nexport class TilesComponent {\n  @HostBinding('style.gap') @Input() gap: Gap = '0';\n  @HostBinding('style.grid-template-rows') @Input() gridTemplateRows: string =\n    'auto';\n  @HostBinding('style.padding') @Input() padding: Padding = '0';\n  @Input({ transform: numberAttribute }) columns: number = 0;\n  @HostBinding('style.grid-template-columns') get gridTemplateColumns() {\n    return `repeat(${this.columns}, 1fr)`;\n  }\n}\n",
             "styleUrl": "./tiles.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -580,7 +580,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    gap: '16px',\n    columns: 3,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -910,7 +910,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    gap: '16px',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    gap: '16px',\n    columns: 3,\n  },\n}"
                 },
                 {
                     "name": "meta",
