@@ -4,6 +4,7 @@ export type SpacingScale =
   | '8px'
   | '12px'
   | '16px'
+  | '24px'
   | '32px'
   | '40px'
   | '64px'

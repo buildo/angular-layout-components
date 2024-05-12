@@ -352,6 +352,144 @@
             "extends": []
         },
         {
+            "name": "RackComponent",
+            "id": "component-RackComponent-0b1b5259daf99fcfc2dabbe64c4e7877df67d67a50355734033b1a4fbc9a78d74a231cb31aa3cb367f9ba043bce51755786b1d717aa4086f00bbc5968c0d984b",
+            "file": "projects/layout-components/src/lib/rack/rack.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rack",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./rack.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 12,
+                    "type": "\"darkGrey\" | \"lightGrey\" | \"white\" | \"warmGrey\" | \"maroon\" | \"orange\" | \"gold\" | \"paleGreen\" | \"paleBlue\" | \"royalBlue\"",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 11,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'rack',\n  standalone: true,\n  imports: [],\n  templateUrl: './rack.component.html',\n  styleUrl: './rack.component.scss',\n})\nexport class RackComponent {\n  @Input({ required: true }) size!: 'small' | 'large';\n  @Input({ required: true }) color!:\n    | 'darkGrey'\n    | 'lightGrey'\n    | 'white'\n    | 'warmGrey'\n    | 'maroon'\n    | 'orange'\n    | 'gold'\n    | 'paleGreen'\n    | 'paleBlue'\n    | 'royalBlue';\n\n  get className() {\n    return `${this.color} ${this.size}`;\n  }\n}\n",
+            "styleUrl": "./rack.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "className": {
+                    "name": "className",
+                    "getSignature": {
+                        "name": "className",
+                        "type": "",
+                        "returnType": "",
+                        "line": 24
+                    }
+                }
+            },
+            "templateData": "<svg viewBox=\"0 0 138 60\" [class]=\"className\">\n  <path\n    d=\"M1 12C1 5.92487 5.92487 1 12 1H126C132.075 1 137 5.92487 137 12V59H1V12Z\"\n  />\n</svg>\n"
+        },
+        {
+            "name": "RackSlotComponent",
+            "id": "component-RackSlotComponent-37562ca7284bc11f654d8f96bb31bff311c98f1940443ca660b5cb911f8ce809a83fe5beb9b30ccd762da739017352ce0d681478e58409fa58bf78621816aed9",
+            "file": "projects/layout-components/src/lib/rack-slot/rack-slot.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rack-slot",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./rack-slot.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 13,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RackComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "StackComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { RackComponent } from '../rack/rack.component';\nimport { StackComponent } from '../stack/stack.component';\n\n@Component({\n  selector: 'rack-slot',\n  standalone: true,\n  imports: [RackComponent, StackComponent],\n  templateUrl: './rack-slot.component.html',\n  styleUrl: './rack-slot.component.css',\n})\nexport class RackSlotComponent {\n  @Input({ required: true }) size!: 'small' | 'large';\n\n  @Input({ required: true }) name!: string;\n}\n",
+            "styleUrl": "./rack-slot.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<stack>\n  <rack [size]=\"size\" color=\"darkGrey\"></rack>\n  <stack gap=\"8px\">\n    <span class=\"name\">{{ name }}</span>\n  </stack>\n</stack>\n"
+        },
+        {
             "name": "StackComponent",
             "id": "component-StackComponent-6f7f38c78f1a3bdda1c056c4b66ef3f9b216de304eceab0d8a6665d795fc4179318d845cf4727dc98c21fc935820c5c7d00f8ca8df6d17053632504e3a35cc08",
             "file": "projects/layout-components/src/lib/stack/stack.component.ts",
@@ -583,6 +721,26 @@
                 "defaultValue": "{\n  args: {\n    gap: '16px',\n    columns: 3,\n  },\n}"
             },
             {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'large',\n    name: 'Name',\n  },\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/rack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'darkGrey',\n    size: 'large',\n  },\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -634,6 +792,26 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Rack Slot',\n  component: RackSlotComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/rack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n  title: 'Components/Rack',\n  component: RackComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/layout-components/src/stories/stack.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -653,6 +831,26 @@
                 "defaultValue": "{\n  title: 'Components/Tiles',\n  component: TilesComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [PlaceholderComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `<tiles ${argsToTemplate(args)}>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n        <placeholder></placeholder>\n      </tiles>`,\n  }),\n}",
                 "rawdescription": "The Tiles component is used to create grid-like layouts.",
                 "description": "<p>The Tiles component is used to create grid-like layouts.</p>\n"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'small',\n    name: 'Name',\n  },\n}"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/layout-components/src/stories/rack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'darkGrey',\n    size: 'small',\n  },\n}"
             }
         ],
         "functions": [],
@@ -751,6 +949,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<InsetComponent>",
                 "file": "projects/layout-components/src/stories/inset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<RackSlotComponent>",
+                "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<RackComponent>",
+                "file": "projects/layout-components/src/stories/rack.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -924,6 +1144,70 @@
                     "rawdescription": "The Tiles component is used to create grid-like layouts.",
                     "description": "<p>The Tiles component is used to create grid-like layouts.</p>\n"
                 }
+            ],
+            "projects/layout-components/src/stories/rack-slot.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'large',\n    name: 'Name',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Rack Slot',\n  component: RackSlotComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'small',\n    name: 'Name',\n  },\n}"
+                }
+            ],
+            "projects/layout-components/src/stories/rack.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/rack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'darkGrey',\n    size: 'large',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/rack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n  title: 'Components/Rack',\n  component: RackComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/layout-components/src/stories/rack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'darkGrey',\n    size: 'small',\n  },\n}"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1038,6 +1322,32 @@
                     "kind": 183
                 }
             ],
+            "projects/layout-components/src/stories/rack-slot.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<RackSlotComponent>",
+                    "file": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/layout-components/src/stories/rack.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<RackComponent>",
+                    "file": "projects/layout-components/src/stories/rack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/layout-components/src/stories/stack.stories.ts": [
                 {
                     "name": "Story",
@@ -1068,8 +1378,8 @@
     },
     "routes": [],
     "coverage": {
-        "count": 30,
-        "status": "medium",
+        "count": 21,
+        "status": "low",
         "files": [
             {
                 "filePath": "projects/layout-components/src/lib/column/column.component.ts",
@@ -1114,6 +1424,24 @@
                 "name": "InsetComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/rack-slot/rack-slot.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RackSlotComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/lib/rack/rack.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RackComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1221,6 +1549,66 @@
                 "name": "PlaceholderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/rack-slot.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/rack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/rack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/layout-components/src/stories/rack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
