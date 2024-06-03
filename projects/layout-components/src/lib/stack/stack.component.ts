@@ -1,5 +1,4 @@
 import { Component, HostBinding, Input } from '@angular/core';
-import { Properties } from 'csstype';
 import { AlignItems, Gap, JustifyContent, Padding } from '../common';
 
 @Component({
@@ -10,15 +9,20 @@ import { AlignItems, Gap, JustifyContent, Padding } from '../common';
   styleUrl: './stack.component.css',
 })
 export class StackComponent {
-  @HostBinding('style.justify-content') @Input() justifyContent: JustifyContent =
-    'flex-start';
+  @HostBinding('style.justify-content')
+  @Input()
+  justifyContent: JustifyContent = 'flex-start';
   @HostBinding('style.align-items')
   @Input()
   alignItems: AlignItems = 'stretch';
+  @HostBinding('style.height')
+  @Input()
+  height?: string;
   @HostBinding('style.gap')
   /**
    * The gap between the children of the stack.
    */
-  @Input() gap: Gap = '0';
+  @Input()
+  gap: Gap = '0';
   @HostBinding('style.padding') @Input() padding: Padding = '0';
 }
