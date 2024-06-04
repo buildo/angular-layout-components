@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/buildo/angular-layout-components.git"
   },
-  "version": "0.1.17",
+  "version": "0.1.18",
   "peerDependencies": {
     "@angular/common": "^17.3.0 || ^18.0.0",
     "@angular/core": "^17.3.0 || ^18.0.0"
