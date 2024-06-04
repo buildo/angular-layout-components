@@ -4,7 +4,10 @@ import { Component, HostBinding, Input } from '@angular/core';
   selector: 'placeholder',
   standalone: true,
   imports: [],
-  template: `<p>Placeholder</p>`,
+  template: `
+    <p><ng-content></ng-content></p>
+    <p class="default">Placeholder</p>
+  `,
   styleUrls: ['./placeholder.component.scss'],
 })
 export class PlaceholderComponent {
