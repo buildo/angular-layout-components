@@ -23,16 +23,43 @@ const meta: Meta<typeof ColumnsComponent> = {
   render: (args) => ({
     props: args,
     template: `<columns ${argsToTemplate(args)}>
-      <column width="240px">
-        <placeholder></placeholder>
-      </column>
-      <column>
-        <placeholder></placeholder>
-      </column>
-      <column flexGrow="1">
-        <placeholder></placeholder>
-      </column>
-    </columns>`,
+    <column width="1/12">
+    1
+  </column>
+  <column width="1/12">
+  2
+</column>
+<column width="1/12">
+3
+</column>
+<column width="1/12">
+4
+</column>
+<column width="1/12">
+5
+</column>
+<column width="1/12">
+6
+</column>
+<column width="1/12">
+7
+</column>
+<column width="1/12">
+8
+</column>
+<column width="1/12">
+9
+</column>
+<column width="1/12">
+10
+</column>
+<column width="1/12">
+11
+</column>
+<column width="1/12">
+12
+</column>
+</columns>`,
   }),
 };
 export default meta;
