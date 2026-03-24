@@ -2,11 +2,10 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { AlignItems, Gap, JustifyContent, Padding } from '../common';
 
 @Component({
-  selector: 'inline',
-  standalone: true,
-  imports: [],
-  template: `<ng-content></ng-content>`,
-  styleUrl: './inline.component.css',
+    selector: 'inline',
+    imports: [],
+    template: `<ng-content></ng-content>`,
+    styleUrl: './inline.component.css'
 })
 export class InlineComponent {
   @HostBinding('style.justify-content')

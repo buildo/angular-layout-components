@@ -2,11 +2,10 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { ColumnFractionWidth } from '../common';
 
 @Component({
-  selector: 'column',
-  standalone: true,
-  imports: [],
-  template: `<ng-content></ng-content>`,
-  styleUrl: './column.component.scss',
+    selector: 'column',
+    imports: [],
+    template: `<ng-content></ng-content>`,
+    styleUrl: './column.component.scss'
 })
 export class ColumnComponent {
   @HostBinding('style.width') @Input() width:
