@@ -2,10 +2,10 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { AlignItems, Gap, JustifyContent, Padding } from '../common';
 
 @Component({
-    selector: 'columns',
-    imports: [],
-    template: `<ng-content></ng-content>`,
-    styleUrl: './columns.component.css'
+  selector: 'columns',
+  imports: [],
+  template: `<ng-content></ng-content>`,
+  styleUrl: './columns.component.css',
 })
 export class ColumnsComponent {
   @HostBinding('style.justify-content')

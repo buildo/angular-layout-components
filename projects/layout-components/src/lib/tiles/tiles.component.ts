@@ -2,10 +2,10 @@ import { Component, HostBinding, Input, numberAttribute } from '@angular/core';
 import { Gap, Padding } from '../common';
 
 @Component({
-    selector: 'tiles',
-    imports: [],
-    template: `<ng-content></ng-content>`,
-    styleUrl: './tiles.component.css'
+  selector: 'tiles',
+  imports: [],
+  template: `<ng-content></ng-content>`,
+  styleUrl: './tiles.component.css',
 })
 export class TilesComponent {
   @HostBinding('style.gap') @Input() gap: Gap = '0';
