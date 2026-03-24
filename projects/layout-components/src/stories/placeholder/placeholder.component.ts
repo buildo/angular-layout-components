@@ -2,7 +2,6 @@ import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'placeholder',
-  standalone: true,
   imports: [],
   template: `
     <p><ng-content></ng-content></p>

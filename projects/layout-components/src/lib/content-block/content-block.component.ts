@@ -2,7 +2,6 @@ import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'content-block',
-  standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
   styleUrl: './content-block.component.css',

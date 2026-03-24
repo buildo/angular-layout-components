@@ -3,7 +3,6 @@ import { Padding } from '../common';
 
 @Component({
   selector: 'inset',
-  standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
   styleUrl: './inset.component.css',

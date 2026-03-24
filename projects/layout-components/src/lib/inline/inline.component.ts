@@ -3,7 +3,6 @@ import { AlignItems, Gap, JustifyContent, Padding } from '../common';
 
 @Component({
   selector: 'inline',
-  standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
   styleUrl: './inline.component.css',

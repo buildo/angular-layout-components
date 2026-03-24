@@ -3,7 +3,6 @@ import { Gap, Padding } from '../common';
 
 @Component({
   selector: 'tiles',
-  standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
   styleUrl: './tiles.component.css',

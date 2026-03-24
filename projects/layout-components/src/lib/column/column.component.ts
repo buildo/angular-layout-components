@@ -3,7 +3,6 @@ import { ColumnFractionWidth } from '../common';
 
 @Component({
   selector: 'column',
-  standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
   styleUrl: './column.component.scss',
