@@ -47,7 +47,7 @@ jobs:
         run: npm run ng build layout-components
 
       - name: Publish to npm
-        run: npm publish dist/layout-components --access public --provenance
+        run: npm publish ./dist/layout-components --access public --provenance
 
       - name: Set up GitHub Packages registry
         uses: actions/setup-node@v4
@@ -56,6 +56,6 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
 
       - name: Publish to Github
-        run: npm publish dist/layout-components --access public
+        run: npm publish ./dist/layout-components --access public
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
