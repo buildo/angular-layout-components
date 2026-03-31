@@ -21,10 +21,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Update npm for OIDC publishing support
+        run: npm install -g npm@latest
 
       - name: Get tag version
         id: get_tag_version
